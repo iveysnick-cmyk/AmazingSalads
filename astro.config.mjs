@@ -1,5 +1,10 @@
-// @ts-check
+// https://astro.build/config
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
-export default defineConfig({});
+export default defineConfig({
+  base: '/AmazingSalads/', // <- replace with your repo name
+});
+
+
+
+
