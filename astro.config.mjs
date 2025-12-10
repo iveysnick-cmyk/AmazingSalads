@@ -1,9 +1,10 @@
 // https://astro.build/config
-import { defineConfig } from 'astro/config';
+import { defineConfig } from 'astro/config'
 
 export default defineConfig({
-  base: '/AmazingSalads/', // <- replace with your repo name
-});
+  site: 'https://iveysnick-cmyk.github.io',
+  base: '/AmazingSalads'
+})
 
 
 
