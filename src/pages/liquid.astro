@@ -1,0 +1,770 @@
+
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { products } from '../data/products';
+const galleryItems = products.slice(0, 7);
+---
+
+<BaseLayout>
+
+<section id="hero-1426">
+    <!-- Canvas for liquid effect -->
+    <canvas id="heroCanvas"></canvas>
+
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Fresh Leafy Greens for Wholesale</h1>
+            <p class="cs-text">
+                Consistent supply, certified quality, fast delivery.
+            </p>
+            <div class="cs-button-group">
+                <a href="" class="cs-button-solid cs-button1">Browse Products</a>
+                <a href="" class="cs-button-solid cs-button2">Request Wholesale Pricing</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden picture to provide responsive image source -->
+    <picture id="heroPicture" style="display:none;">
+        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/field-m.jpg">
+        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/field.jpg">
+        <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/field.jpg" alt="field">
+    </picture>
+</section>
+
+<style>
+
+    /* Mobile - 360px */
+    @media only screen and (min-width: 0rem) {
+    #hero-1426 {
+        /* Centers button */
+        text-align: center;
+        /* 200px - 300px - leaving extra space for the navigation */
+        padding: clamp(12.5rem, 25.95vw, 18.75em) 1rem;
+        /* prevents the topper line from causing an overflow */
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+    }
+    #hero-1426 .cs-background {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+    }
+    #hero-1426 .cs-background:before {
+        /* Overlay */
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.48;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        /* prevents the cursor from interacting with it */
+        pointer-events: none;
+    }
+    #hero-1426 .cs-background img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    #hero-1426 .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+    }
+    #hero-1426 .cs-content {
+        width: 100%;
+        max-width: 39.375rem;
+    }
+    #hero-1426 .cs-topper {
+        /* 13px - 16px */
+        font-size: clamp(0.8125rem, 1.5vw, 1rem);
+        line-height: 1.2em;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        color: var(--secondary);
+        display: inline-block;
+        position: relative;
+    }
+    #hero-1426 .cs-title {
+        /* 39px - 61px */
+        font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+        font-weight: 700;
+        line-height: 1.2em;
+        text-align: center;
+        max-width: 51.8125rem;
+        color: #fff;
+        position: relative;
+    }
+    #hero-1426 .cs-text {
+        /* 16px - 20px */
+        font-size: clamp(1rem, 1.95vw, 1.25rem);
+        line-height: 1.5em;
+        text-align: center;
+        width: 100%;
+        /* 464px - 622px */
+        max-width: clamp(29rem, 60vw, 38.785rem);
+        margin: 0 auto 0;
+        margin-bottom: 2rem;
+        color: #fff;
+    }
+    #hero-1426 .cs-button-group {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    #hero-1426 .cs-button-solid {
+        font-size: 1rem;
+        /* 46px - 56px */
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #1a1a1a;
+        min-width: 12.5rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        border-radius: 0.5rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+    }
+    #hero-1426 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
+    }
+    #hero-1426 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+    #hero-1426 .cs-button1 {
+        background-color: var(--secondary);
+    }
+    }                    
+</style>
+
+<style>
+
+#hero-1426 {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Hero full viewport height */
+  overflow: hidden;
+}
+
+#heroCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Behind content */
+}
+
+.cs-container {
+  position: relative;
+  z-index: 1; /* Above canvas */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+/* Optional: overlay like before */
+#hero-1426::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.48);
+  z-index: 0; /* Above canvas, behind content */
+  pointer-events: none;
+}
+
+</style>
+
+<script type="module">
+    
+import LiquidBackground from 'https://cdn.jsdelivr.net/npm/threejs-components@0.0.27/build/backgrounds/liquid1.min.js'
+
+const canvas = document.getElementById('heroCanvas')
+const app = LiquidBackground(canvas)
+
+// Use the responsive image source
+const pic = document.querySelector('#heroPicture img')
+app.loadImage('/images/products/parsley.webp')
+
+// Customize liquid appearance
+app.liquidPlane.material.metalness = 0.75
+app.liquidPlane.material.roughness = 0.25
+app.liquidPlane.uniforms.displacementScale.value = 5
+app.setRain(false)
+
+</script>
+
+
+<!-- ============================================ -->
+<!--                   Products                   -->
+<!-- ============================================ -->
+
+<section id="gallery-1508">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Products</span>
+            <h2 class="cs-title">Explore Our Amazing Products</h2>
+            <p class="cs-text">
+                Take a closer look at the delicious, garden-fresh greens and herbs we grow.
+            </p>
+            <a href="/products" class="cs-button-solid">View All</a>
+        </div>
+        <!--Picture 1-->
+        {galleryItems.map(product => (
+          <div class="cs-picture-group">
+              <picture class="cs-image">
+                  <source media="(max-width: 600px)"
+                          srcset={product.image}>
+                  <source media="(min-width: 601px)"
+                          srcset={product.image}>
+                  <img loading="lazy" decoding="async"
+                          src={product.image}
+                          height="400" height="400" alt="day care">
+              </picture>
+            
+              <div class="cs-info">
+                  <h3 class="cs-h3">{product.name}</h3>
+                  <p class="cs-item-text">{product.description}</p>
+              </div>
+          </div>
+        ))}
+        <img class="cs-graphic cs-graphic-one"
+                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/day-care-team-graphic-four.svg"
+                alt="graphic" loading="lazy" decoding="async" height="134" width="197">
+        <img class="cs-graphic cs-graphic-two"
+                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/day-care-team-graphic-three.svg"
+                alt="graphic" loading="lazy" decoding="async" height="191" width="138">
+    </div>
+</section>
+<style>
+/*-- -------------------------- -->
+<---          Gallery           -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #gallery-1508 {
+    padding: var(--sectionPadding);
+    overflow: hidden;
+  }
+  #gallery-1508 .cs-container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 34.375rem;
+    margin: auto;
+    display: grid;
+    grid-auto-flow: row;
+    /* 16px - 20px */
+    gap: clamp(1rem, 2vw, 1.25rem);
+    position: relative;
+  }
+  #gallery-1508 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    /* 48px - 64px */
+    margin-bottom: clamp(3rem, 6vw, 4rem);
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #gallery-1508 .cs-button-solid {
+    font-size: 1rem;
+    font-weight: 700;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-align: center;
+    text-decoration: none;
+    margin: 2rem 0 0;
+    /* 32px - 48px */
+    padding: 0 clamp(2rem, 4vw, 3rem);
+    color: #fff;
+    background-color: var(--secondary);
+    border-radius: 1.875rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 0.3s;
+  }
+  #gallery-1508 .cs-button-solid:before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    background: var(--secondary);
+    opacity: 1;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+  #gallery-1508 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #gallery-1508 .cs-picture-group {
+    position: relative;
+    /* stops the name and text being overflown during the transition */
+    overflow: hidden;
+  }
+  #gallery-1508 .cs-image {
+    width: 100%;
+    height: 17.5rem;
+    border-radius: 1.25rem;
+    display: block;
+    position: relative;
+    /* clips the image corners */
+    overflow: hidden;
+  }
+  #gallery-1508 .cs-image img {
+    width: 100%;
+    height: 100%;
+    /* makes it act like a background image */
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #gallery-1508 .cs-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+  }
+  #gallery-1508 .cs-h3,
+  #gallery-1508 .cs-item-text {
+    width: fit-content;
+    margin: 0;
+    padding: 0.75rem 1rem;
+    color: #fff;
+    background-color: #1a1a1a;
+    border-radius: 0.5rem;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  #gallery-1508 .cs-h3 {
+    /* 20px - 25px */
+    font-size: clamp(1.25rem, 1vw, 1.5625rem);
+    font-weight: 700;
+    line-height: 1.2em;
+    transition-delay: 0.05s;
+  }
+  #gallery-1508 .cs-item-text {
+    font-size: 1rem;
+    line-height: 1.5em;
+    padding: 0.75rem 1rem;
+  }
+  #gallery-1508 .cs-graphic {
+    display: none;
+    position: absolute;
+  }
+  #gallery-1508 .cs-graphic-one {
+    width: 8.625rem;
+    height: 11.9375rem;
+    top: 13rem;
+    right: -6.8125rem;
+    transform: rotate(104deg);
+  }
+  #gallery-1508 .cs-graphic-two {
+    width: 12.3125rem;
+    height: 8.375rem;
+    bottom: -4.5625rem;
+    left: -5.5625rem;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #gallery-1508 .cs-container {
+    max-width: 80rem;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+  #gallery-1508 .cs-content {
+    grid-column: span 12;
+  }
+  #gallery-1508 .cs-picture-group:nth-child(2) {
+    display: block;
+    grid-column: span 6;
+    grid-row: span 2;
+  }
+  #gallery-1508 .cs-picture-group:nth-child(3) {
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+  #gallery-1508 .cs-picture-group:nth-child(4) {
+    grid-column: span 6;
+    grid-row: span 2;
+  }
+  #gallery-1508 .cs-picture-group:nth-child(5) {
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+  #gallery-1508 .cs-picture-group:nth-child(6) {
+    grid-column: span 12;
+    grid-row: span 1;
+  }
+  #gallery-1508 .cs-picture-group:nth-child(7) {
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+  #gallery-1508 .cs-picture-group:nth-child(8) {
+    grid-column: span 6;
+    grid-row: span 1;
+  }
+  #gallery-1508 .cs-image {
+    height: 100%;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #gallery-1508 .cs-container {
+    grid-template-rows: repeat(4, 1fr);
+  }
+  #gallery-1508 .cs-content {
+    text-align: left;
+    margin-top: -3.3125rem;
+    align-items: flex-start;
+    grid-column: span 8;
+  }
+  #gallery-1508 .cs-picture-group:nth-child(2) {
+    grid-column: span 4;
+    grid-row: span 1;
+  }
+  #gallery-1508 .cs-picture-group:nth-child(3) {
+    grid-column: span 4;
+    grid-row: span 2;
+  }
+  #gallery-1508 .cs-picture-group:nth-child(4) {
+    grid-column: span 4;
+    grid-row: span 1;
+  }
+  #gallery-1508 .cs-picture-group:nth-child(5) {
+    grid-column: span 4;
+    grid-row: span 2;
+  }
+  #gallery-1508 .cs-picture-group:nth-child(6) {
+    grid-column: span 4;
+    grid-row: span 2;
+  }
+  #gallery-1508 .cs-picture-group:nth-child(7) {
+    grid-column: span 4;
+    grid-row: span 1;
+  }
+  #gallery-1508 .cs-picture-group:nth-child(8) {
+    grid-column: span 4;
+    grid-row: span 1;
+  }
+  #gallery-1508 .cs-h3,
+  #gallery-1508 .cs-item-text {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  #gallery-1508 .cs-picture-group:hover .cs-h3,
+  #gallery-1508 .cs-picture-group:hover .cs-item-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+  #gallery-1508 .cs-content {
+    margin-top: 0;
+  }
+  #gallery-1508 .cs-graphic {
+    display: block;
+  }
+}
+                                	
+</style>                             
+
+	<!-- ============================================ -->
+	<!--                 Why Choose Us                -->
+	<!-- ============================================ -->
+
+	<section id="why-choose-1479">
+		<div class="cs-container">
+			<div class="cs-content">
+				<span class="cs-topper">Our features</span>
+				<h2 class="cs-title">Our Unique Features</h2>
+				<p class="cs-text">
+					Stitch day care is a place where you can keep your baby with peace in your mind when you are working in your office for the better future of your child. We promise to take care of your child’s social, emotional, intellectual and physical needs with sensitive care and we also ensure you their security with our life.
+				</p>
+			</div>
+			<ul class="cs-card-group">
+				<li class="cs-item">
+					<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/day-care-house.svg" loading="lazy" decoding="async" alt="icon" width="32" height="32" aria-hidden="true">
+					<h3 class="cs-h3">Reliable Delivery</h3>
+					<img class="cs-graphic" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/Vector%204.svg" alt="graphic" width="310" height="121" decoding="async" loading="lazy">
+				</li>
+				<li class="cs-item">
+					<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/day-care-shield.svg" loading="lazy" decoding="async" alt="icon" width="32" height="32" aria-hidden="true">
+					<h3 class="cs-h3">Consistent Quality</h3>
+					<img class="cs-graphic" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/Vector%204.svg" alt="graphic" width="310" height="121" decoding="async" loading="lazy">
+				</li>
+				<li class="cs-item">
+					<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/day-care-thumb.svg" loading="lazy" decoding="async" alt="icon" width="32" height="32" aria-hidden="true">
+					<h3 class="cs-h3">Certified Produce</h3>
+					<img class="cs-graphic" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/Vector%204.svg" alt="graphic" width="310" height="121" decoding="async" loading="lazy">
+				</li>
+				<li class="cs-item">
+					<img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/day-care-ball.svg" loading="lazy" decoding="async" alt="icon" width="32" height="32" aria-hidden="true">
+					<h3 class="cs-h3">Large-Scale Supply</h3>
+					<img class="cs-graphic" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/Vector%204.svg" alt="graphic" width="310" height="121" decoding="async" loading="lazy">
+				</li>
+			</ul>
+		</div>
+	</section>
+	<style>
+		/*-- -------------------------- -->
+		<---          Why choose        -->
+		<--- -------------------------- -*/
+
+		/* Mobile - 360px */
+		@media only screen and (min-width: 0rem) {
+		#why-choose-1479 {
+			padding: var(--sectionPadding);
+		}
+		#why-choose-1479 .cs-container {
+			width: 100%;
+			/* changes to 1280px at tablet */
+			max-width: 36.5rem;
+			margin: auto;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			/* 48px - 64px */
+			gap: clamp(3rem, 6vw, 4rem);
+		}
+		#why-choose-1479 .cs-content {
+			/* set text align to left if content needs to be left aligned */
+			text-align: center;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			/* centers content horizontally, set to flex-start to left align */
+			align-items: center;
+		}
+		#why-choose-1479 .cs-text {
+			max-width: 49rem;
+		}
+		#why-choose-1479 .cs-card-group {
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			/* 8px - 20px */
+			gap: clamp(0.5rem, 2vw, 1.25rem);
+		}
+		#why-choose-1479 .cs-item {
+			list-style: none;
+			width: 100%;
+			box-sizing: border-box;
+			/* 24px - 80px - top and bottom*/
+			/* 12px - 60px - Left and right*/
+			padding: clamp(1.5rem, 5vw, 5rem) clamp(0.75rem, 1vw, 3.75rem);
+			border: 1px solid #e8e8e8;
+			background-color: #fff;
+			/* 24px - 60px */
+			border-radius: clamp(1.5rem, 4vw, 3.75rem);
+			grid-column: span 6;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: clamp(1rem, 1.7vw, 1.5rem);
+			position: relative;
+			overflow: hidden;
+			transition: border-color 0.3s, background-color 0.3s;
+		}
+		#why-choose-1479 .cs-item:hover {
+			border-color: var(--primary);
+		}
+		#why-choose-1479 .cs-item:hover .cs-icon {
+			filter: none;
+		}
+		#why-choose-1479 .cs-item:hover .cs-graphic {
+			filter: grayscale(0);
+		}
+		#why-choose-1479 .cs-icon {
+			width: auto;
+			/* 48px - 60px */
+			height: clamp(3rem, 5vw, 3.75rem);
+			/* greyscale gets removed on hover, revealing the color of the icon. customise your icons to match your color scheme and the hover effect will work automatically */
+			filter: grayscale(1);
+			transition: filter 0.3s;
+		}
+		#why-choose-1479 .cs-h3 {
+			font-size: 1.25rem;
+			font-weight: 700;
+			line-height: 1.2em;
+			text-align: center;
+			max-width: 11.5625rem;
+			margin: 0 auto;
+			color: var(--headerColor);
+		}
+		#why-choose-1479 .cs-graphic {
+			min-width: 19.375rem;
+			width: 100%;
+			height: auto;
+			filter: grayscale(1);
+			display: none;
+			position: absolute;
+			/* changes to 0 at large desktop */
+			bottom: -2.1875rem;
+			left: 0;
+			transition: filter .3s;
+		}
+		}
+		/* Tablet - 768px */
+		@media only screen and (min-width: 48rem) {
+		#why-choose-1479 .cs-container {
+			max-width: 80rem;
+		}
+		#why-choose-1479 .cs-item {
+			grid-column: span 3;
+		}
+		}
+		/* Desktop - 1024px */
+		@media only screen and (min-width: 64rem) {
+		#why-choose-1479 .cs-graphic {
+			display: block;
+		}
+		}
+		/* Large Desktop - 1300px */
+		@media only screen and (min-width: 81.25rem) {
+		#why-choose-1479 .cs-graphic {
+			bottom: 0;
+		}
+		}
+	</style>
+		 <section id="partners">
+			<div class="slider">
+				<div class="slide-track">
+					<div class="slide"><img src="/images/certificates/haccp.webp" height="100" width="250"></div>
+					<div class="slide"><img src="/images/certificates/sedex.webp" height="100" width="250"></div>
+					<div class="slide"><img src="/images/certificates/redTractor.webp" height="100" width="250"></div>
+					<div class="slide"><img src="/images/certificates/haccp.webp" height="100" width="250"></div>
+					<div class="slide"><img src="/images/certificates/sedex.webp" height="100" width="250"></div>
+					<div class="slide"><img src="/images/certificates/redTractor.webp" height="100" width="250"></div>
+          <div class="slide"><img src="/images/certificates/haccp.webp" height="100" width="250"></div>
+					<div class="slide"><img src="/images/certificates/sedex.webp" height="100" width="250"></div>
+					<div class="slide"><img src="/images/certificates/redTractor.webp" height="100" width="250"></div>
+					<div class="slide"><img src="/images/certificates/haccp.webp" height="100" width="250"></div>
+					<div class="slide"><img src="/images/certificates/sedex.webp" height="100" width="250"></div>
+					<div class="slide"><img src="/images/certificates/redTractor.webp" height="100" width="250"></div>
+				</div>
+			</div>
+		</section>
+
+		<style>
+		#partners {
+			align-items: center;
+			background: white;
+			display: flex;
+			height: 40vh;
+			justify-content: center;
+		}
+
+		/* Replace SCSS mixin with plain CSS */
+		.slider::before,
+		.slider::after {
+			background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+			content: "";
+			height: 100px;
+			position: absolute;
+			width: 200px;
+			z-index: 2;
+		}
+
+		.slider::after {
+			right: 0;
+			top: 0;
+			transform: rotateZ(180deg);
+		}
+
+		.slider::before {
+			left: 0;
+			top: 0;
+		}
+
+		/* Animation */
+		@keyframes scroll {
+			0% { transform: translateX(0); }
+			100% { transform: translateX(calc(-250px * 6)); }
+		}
+
+		/* Slider styling */
+		.slider {
+			background: white;
+			box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+			height: 100px;
+			margin: auto;
+			overflow: hidden;
+			position: relative;
+			width: 960px;
+			border-radius: 1.25rem;
+		}
+
+		/* 40s replaced for $animationSpeed */
+		.slide-track {
+			animation: scroll 40s linear infinite;
+			display: flex;
+			width: calc(250px * 14);
+		}
+
+		.slide {
+			height: 100px;
+			width: 250px;
+		}
+		</style> 
+                                       
+</BaseLayout>
+
+
+
+

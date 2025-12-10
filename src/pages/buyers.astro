@@ -1,0 +1,570 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>                                 
+<!-- ============================================ -->
+<!--                   Steps                      -->
+<!-- ============================================ -->
+
+<section id="steps-1713">
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)"
+                srcset="/public/images/getStarted.png">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)"
+                srcset="/public/images/getStarted.png">
+        <img loading="lazy" decoding="async"
+                src="/public/images/getStarted.png"
+                alt="busines meeting" width="522" height="609" aria-hidden="true">
+    </picture>
+    <div class="cs-container">
+        <div class="cs-wrapper">
+            <div class="cs-content">
+                <span class="cs-topper">Our Steps</span>
+                <h2 class="cs-title">How To Get Started</h2>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <span class="cs-number">01</span>
+                    <div class="cs-flex">
+                        <h3 class="cs-h3">Submit your request</h3>
+                        <p class="cs-item-text">
+                            Provide the details of your needs so we can understand your requirements and prepare a suitable solution.
+                        </p>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-number">02</span>
+                    <div class="cs-flex">
+                        <h3 class="cs-h3">Get pricing & product list</h3>
+                        <p class="cs-item-text">
+                            Receive a comprehensive list of products along with transparent pricing to help you make informed decisions efficiently.
+                    </p>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-number">03</span>
+                    <div class="cs-flex">
+                        <h3 class="cs-h3">Start receiving deliveries</h3>
+                        <p class="cs-item-text">
+                            Begin receiving your orders promptly and reliably, ensuring a smooth and continuous supply without interruptions.
+                        </p>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</section>
+<style>
+/*-- -------------------------- -->
+<---          Steps             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #steps-1713 {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    margin-top: 10rem;
+
+    
+  }
+  #steps-1713 .cs-container {
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  #steps-1713 .cs-wrapper {
+    /* changes to 630px on tablet */
+    max-width: 31.25rem;
+    margin: auto;
+    padding: var(--sectionPadding);
+    display: flex;
+    flex-direction: column;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #steps-1713 .cs-content {
+    /* set text align to center if content needs to be centrally aligned */
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* aligns content to the left, set to center to centrally align */
+    align-items: flex-start;
+  }
+  #steps-1713 .cs-title {
+    margin: 0;
+  }
+  #steps-1713 .cs-card-group {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    justify-items: center;
+    align-items: stretch;
+    /* 24px - 32px */
+    gap: clamp(1.5rem, 3vw, 2rem);
+    grid-auto-flow: row;
+  }
+  #steps-1713 .cs-item {
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+  }
+  #steps-1713 .cs-number {
+    /* 80px - 100px */
+    font-size: clamp(5rem, 9vw, 6.25rem);
+    font-weight: 900;
+    line-height: 1.2em;
+    letter-spacing: -2px;
+    margin-right: -1.25rem;
+    color: var(--primary);
+    opacity: 0.12;
+    display: block;
+  }
+  #steps-1713 .cs-h3 {
+    font-size: 1.5625rem;
+    font-weight: 700;
+    line-height: 1.2em;
+    margin: 0 0 0.75rem 0;
+    color: var(--headerColor);
+  }
+  #steps-1713 .cs-item-text {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    line-height: 1.5em;
+    text-align: left;
+    margin: 0;
+    color: var(--bodyTextColor);
+  }
+  #steps-1713 .cs-background {
+    width: 100%;
+    height: 22.5rem;
+    display: block;
+  }
+  
+  #steps-1713 .cs-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.25rem;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #steps-1713 {
+    padding: var(--sectionPadding);
+  }
+  #steps-1713 .cs-container {
+    padding: 0;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  #steps-1713 .cs-title {
+    margin: 0;
+  }
+  #steps-1713 .cs-wrapper {
+    width: 65vw;
+    max-width: 39.375rem;
+    margin: 0;
+    padding: 0;
+  }
+  #steps-1713 .cs-card-group {
+    /* 16px - 32px */
+    gap: clamp(1rem, 3vw, 2rem);
+  }
+  #steps-1713 .cs-item {
+    flex-direction: row;
+  }
+  #steps-1713 .cs-picture {
+    width: 11.25rem;
+    height: 11.25rem;
+  }
+  #steps-1713 .cs-background {
+    width: 30%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #steps-1713 .cs-wrapper {
+    width: 50vw;
+  }
+  #steps-1713 .cs-background {
+    width: 50vw;
+    right: 50%;
+    left: auto;
+    margin-right: 8rem;
+  }
+}                        
+</style>
+<!-- ============================================ -->
+<!--                 Why Choose                   -->
+<!-- ============================================ -->
+
+<section id="why-choose-12">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Experienced</span>
+            <h2 class="cs-title">Why Choose Us?</h2>
+            
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img loading="lazy" decoding="async" src="/public/images/customPricing.svg" alt="heart icon" width="42" height="42" aria-hidden="true">
+                </picture>
+                <h3 class="cs-h3">Custom pricing</h3>
+                <p class="cs-item-text">
+                    Pricing tailored to your needs, helping you save without compromising quality. 
+                </p>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img loading="lazy" decoding="async" src="/public/images/scheduledDeliveries.svg" alt="toolbox icon" width="42" height="42" aria-hidden="true">
+                </picture>
+                <h3 class="cs-h3">Scheduled deliveries</h3>
+                <p class="cs-item-text">
+                    Regular deliveries on our schedule to keep your supply consistent and dependable.
+                </p>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img loading="lazy" decoding="async" src="/public/images/qualityGuaranteed.svg" alt="ribbon icon" width="32" height="42" aria-hidden="true">
+                </picture>
+                <h3 class="cs-h3">Quality guaranteed</h3>
+                <p class="cs-item-text">
+                    Carefully selected products to ensure freshness and high quality every time.
+                </p>
+            </li>
+        </ul>
+        <a href="" class="cs-button-solid">Get Free Quote</a>
+    </div>
+</section>
+<style>
+/*-- -------------------------- -->
+<---       Why Choose Us        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #why-choose-12 {
+        padding: var(--sectionPadding);
+    }
+    #why-choose-12 .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+    #why-choose-12 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+    }
+    #why-choose-12 .cs-topper {
+        font-size: var(--topperFontSize);
+        line-height: 1.2em;
+        text-transform: uppercase;
+        text-align: inherit;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.25rem;
+        display: block;
+    }
+    #why-choose-12 .cs-title {
+        font-size: var(--headerFontSize);
+        font-weight: 900;
+        line-height: 1.2em;
+        text-align: inherit;
+        max-width: 43.75rem;
+        margin: 0 0 1rem 0;
+        color: var(--headerColor);
+        position: relative;
+    }
+    #why-choose-12 .cs-text {
+        font-size: var(--bodyFontSize);
+        line-height: 1.5em;
+        text-align: inherit;
+        width: 100%;
+        max-width: 40.625rem;
+        margin: 0;
+        color: var(--bodyTextColor);
+    }
+    #why-choose-12 .cs-card-group {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 3.75rem;
+    }
+    #why-choose-12 .cs-item {
+        text-align: center;
+        list-style: none;
+        width: 100%;
+        max-width: 22.5rem;
+        margin: 0;
+        padding: 0;
+    }
+    #why-choose-12 .cs-picture {
+        /* 68px - 88px */
+        width: clamp(4.25rem, 7vw, 5.5rem);
+        height: clamp(4.25rem, 7vw, 5.5rem);
+        margin: auto;
+        margin-bottom: 2rem;
+        border-radius: 50%;
+        background-color: var(--primary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #why-choose-12 .cs-picture img {
+        width: auto;
+        height: 2.625rem;
+        display: block;
+    }
+    #why-choose-12 .cs-h3 {
+        font-size: 1.25rem;
+        line-height: 1.2em;
+        text-align: inherit;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0;
+        margin-bottom: 0.5rem;
+        color: var(--headerColor);
+    }
+    #why-choose-12 .cs-item-text {
+        font-size: 1rem;
+        text-align: inherit;
+        line-height: 1.5em;
+        margin: 0;
+        color: var(--bodyTextColor);
+    }
+    #why-choose-12 .cs-button-solid {
+        font-size: 1rem;
+        /* 46px - 56px */
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+    }
+    #why-choose-12 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
+    }
+    #why-choose-12 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #why-choose-12 .cs-card-group {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+    
+</style>                             
+<!-- ============================================ -->
+<!--                      FAQ                     -->
+<!-- ============================================ -->
+
+<section id="faq-1582">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">FAQ</span>
+            <h2 class="cs-title">Frequently Asked Questions</h2>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-text-group">
+                    <h3 class="cs-h3">1. How do I place an order?</h3>
+                    <p class="cs-item-text">
+                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa fugiat impedit molestias vitae voluptatibus sed enim! Cupiditate ab praesentium dolorem libero veritatis beatae assumenda totam, in, nemo quis consectetur labore!
+                    </p>
+                </div>
+            </li>
+            <li class="cs-item">
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-text-group">
+                    <h3 class="cs-h3">2. What payment methods do you accept?</h3>
+                    <p class="cs-item-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa fugiat impedit molestias vitae voluptatibus sed enim! Cupiditate ab praesentium dolorem libero veritatis beatae assumenda totam, in, nemo quis consectetur labore!
+                    </p>
+                </div>
+            </li>
+            <li class="cs-item">
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-text-group">
+                    <h3 class="cs-h3">3. How can I track my order?</h3>
+                    <p class="cs-item-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa fugiat impedit molestias vitae voluptatibus sed enim! Cupiditate ab praesentium dolorem libero veritatis beatae assumenda totam, in, nemo quis consectetur labore!
+                    </p>
+                </div>
+            </li>
+            <li class="cs-item">
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-text-group">
+                    <h3 class="cs-h3">4. What is your return policy?</h3>
+                    <p class="cs-item-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa fugiat impedit molestias vitae voluptatibus sed enim! Cupiditate ab praesentium dolorem libero veritatis beatae assumenda totam, in, nemo quis consectetur labore!
+                    </p>
+                </div>
+            </li>
+            <li class="cs-item">
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-text-group">
+                    <h3 class="cs-h3">5. Do you offer international shipping?</h3>
+                    <p class="cs-item-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa fugiat impedit molestias vitae voluptatibus sed enim! Cupiditate ab praesentium dolorem libero veritatis beatae assumenda totam, in, nemo quis consectetur labore!
+                    </p>
+                </div>
+            </li>
+            <li class="cs-item">
+                <!-- Text Grouped For Flexbox-->
+                <div class="cs-text-group">
+                    <h3 class="cs-h3">6. How can I contact customer support?</h3>
+                    <p class="cs-item-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa fugiat impedit molestias vitae voluptatibus sed enim! Cupiditate ab praesentium dolorem libero veritatis beatae assumenda totam, in, nemo quis consectetur labore!
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<style>
+/*-- -------------------------- -->
+<---            FAQ             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #faq-1582 {
+    padding: var(--sectionPadding);
+    position: relative;
+    z-index: 1;
+  }
+  #faq-1582 .cs-container {
+    width: 100%;
+    /* changes to 1280px at talet */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 5vw, 4rem);
+    position: relative;
+  }
+  #faq-1582 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+  #faq-1582 .cs-title {
+    margin: 0;
+  }
+  #faq-1582 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* 16px - 20px */
+    gap: clamp(1rem, 2vw, 1.25rem);
+  }
+  #faq-1582 .cs-item {
+    width: 100%;
+    text-align: left;
+    list-style: none;
+    /* 20px - 32px */
+    padding: clamp(1.25rem, 2.3vw, 2rem);
+    background-color: #F7F7F7;
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    grid-column: span 12;
+    position: relative;
+    z-index: 1;
+  }
+  #faq-1582 .cs-h3 {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    color: var(--headerColor);
+    transition: color 0.3s;
+  }
+  #faq-1582 .cs-item-text {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    margin: 0;
+    color: var(--bodyTextColor);
+    transition: color 0.3s;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #faq-1582 .cs-container {
+    max-width: 80rem;
+  }
+  #faq-1582 .cs-item {
+    grid-column: span 6;
+  }
+}    
+</style>
+
+
+
+</BaseLayout>

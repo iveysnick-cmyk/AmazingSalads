@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { products } from '../data/products';
+import ProductCard from '../components/ProductCard.astro';
+---
+
+<BaseLayout>
+<!-- ============================================ -->
+<!--                  Services                    -->
+<!-- ============================================ -->
+
+<section id="services-2355">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Our Products</span>
+            <h2 class="cs-title">Let’s See Our Products</h2>
+        </div>                  
+        <ul class="cs-card-group">
+            {products.map(product => (
+              <ProductCard product={product} />
+            ))}
+        </ul>
+    </div>
+</section>
+
+                           
+</BaseLayout>

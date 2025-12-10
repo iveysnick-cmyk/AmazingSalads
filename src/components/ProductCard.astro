@@ -1,0 +1,26 @@
+---
+interface Product {
+  slug: string;
+  name: string;
+  image: string;
+  description: string;
+}
+
+const { product } = Astro.props as { product: Product };
+---
+
+            <li class="cs-item">
+                <a href={`/products/${product.slug}`} class="cs-link">
+                    <picture class="cs-picture">
+                        <!--Mobile Image-->
+                        <source media="(max-width: 600px)" srcset={product.image}>
+                        <!--Tablet and above Image-->
+                        <source media="(min-width: 601px)" srcset={product.image}>
+                        <img loading="lazy" decoding="async" src={product.image} alt="building" width="305" height="340">
+                    </picture>
+                    <h3 class="cs-h3">{product.name}</h3>
+                    <p class="cs-item-text">
+                        {product.description}
+                    </p>
+                </a>
+            </li>

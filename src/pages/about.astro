@@ -1,0 +1,493 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout>
+<!-- ============================================ -->
+<!--              Side By Side Reverse            -->
+<!-- ============================================ -->
+
+<section id="sbsr-1279">
+    <div class="cs-container">
+        <picture class="cs-picture">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="/public/images/aboutUs.png">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)" srcset="/public/images/aboutUs.png">
+            <img loading="lazy" decoding="async" src="/public/images/aboutUs.png" alt="construction" width="738" height="598">
+        </picture>
+        <div class="cs-content">
+            <div class="cs-flex">
+                <span class="cs-topper">Our Company</span>
+                <h2 class="cs-title">Get to Know Amazing Salads</h2>
+            </div>
+            <p class="cs-text">
+                Amazing Salads is a family run business located in North Hertfordshire. We use traditional farming methods learned from our ancestors and believe this care and attention to detail is what puts us apart from our competitors. We deliver high quality products to over 50 stores in London alone. We strive to deliver great customer service and have grown via word of mouth. All our products are grown by order, to reduce waste and meet&nbsp;supply demand. Plus, we import high quality salads from Cyprus, Greece and Spain during the winter months to provide continuity of product supply and quality. We deliver throughout South East England and London. The variety of salads we offer, include, but are not limited to, Lettuce, Parsley, Water Cress, Baby Spinach, Wild Rocket, Dill, Endives and more. Click Products page to see our product listing.
+            </p>
+            
+        </div>
+    </div>
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/white-waves-m.svg">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/white-waves.svg">
+        <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/white-waves.svg" alt="waves" width="960" height="839">
+    </picture>
+</section>
+
+<style>
+/*-- -------------------------- -->
+<---   Side By Side Reverse     -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #sbsr-1279 {
+        padding: var(--sectionPadding);
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        margin-top: 10rem;
+
+    }
+    #sbsr-1279 .cs-container {
+        width: 100%;
+        /* changes to 1280px at desktop */
+        max-width: 53.125rem;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        flex-direction: column;
+        /* 48px - 108px */
+        gap: clamp(3rem, 5vw, 6.75rem);
+    }
+    #sbsr-1279 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: left;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: flex-start;
+        /* sends it to the bottom in the 2nd position */
+        order: 2;
+    }
+
+    #sbsr-1279 .cs-title {
+        max-width: 20ch;
+    }
+    #sbsr-1279 .cs-text {
+        margin-bottom: 1rem;
+    }
+    #sbsr-1279 .cs-text:last-of-type {
+        margin-bottom: 2rem;
+    }
+    #sbsr-1279 .cs-button-solid {
+        font-size: 1rem;
+        /* 46px - 56px */
+        line-height: clamp(2.875em, 5.5vw, 3.5em);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+        border: none;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        border-radius: 0.25rem;
+        overflow: hidden;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+        transition: color 0.3s;
+    }
+    #sbsr-1279 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: width 0.3s;
+    }
+    #sbsr-1279 .cs-button-solid:hover {
+        color: #fff;
+    }
+    #sbsr-1279 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+    #sbsr-1279 .cs-picture {
+        width: 100%;
+        /* 456px - 598px */
+        height: clamp(28.5rem, 46vw, 37.375rem);
+        border-radius: 1.25rem;
+        overflow: hidden;
+        display: block;
+        /* sends it to the bottom in the 2nd position */
+        order: 2;
+        position: relative;
+        z-index: 1;
+    }
+    #sbsr-1279 .cs-picture:before {
+        /* black overlay */
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #1a1a1a;
+        opacity: 0.3;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    #sbsr-1279 .cs-picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    #sbsr-1279 .cs-background {
+        width: 100%;
+        height: 50%;
+        background-color: #1a1a1a;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    #sbsr-1279 .cs-background img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #sbsr-1279 .cs-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 2rem;
+    }
+    #sbsr-1279 .cs-flex {
+        width: 45%;
+    }
+    #sbsr-1279 .cs-title {
+        margin: 0;
+    }
+    #sbsr-1279 .cs-text {
+        width: 50%;
+    }
+    #sbsr-1279 .cs-button-solid {
+        margin-right: auto;
+    }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #sbsr-1279 {
+        /* moved padding back to the section container */
+        padding: var(--sectionPadding);
+    }
+    #sbsr-1279 .cs-container {
+        max-width: 80rem;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #sbsr-1279 .cs-content {
+        width: 100%;
+        max-width: 27.0625rem;
+        margin: 0;
+        flex-direction: column;
+        row-gap: 0;
+        order: 1;
+    }
+    #sbsr-1279 .cs-flex {
+        width: 100%;
+    }
+    #sbsr-1279 .cs-title {
+        margin: 0 0 1rem 0;
+        color: var(--headerColor);
+    }
+    #sbsr-1279 .cs-text {
+        width: 100%;
+    }
+    #sbsr-1279 .cs-picture {
+        max-width: 46.125rem;
+    }
+    #sbsr-1279 .cs-background {
+        width: 60vw;
+        height: 100%;
+        /* 172px - 336px */
+        margin-left: clamp(11.125rem, 30vw, 21rem);
+        left: 50%;
+        top: 0;
+    }
+}
+</style>
+
+<!-- ============================================ -->
+<!--                     Stats                    -->
+<!-- ============================================ -->
+
+<section id="stats-1685">
+    <div class="cs-container">
+        <div class="cs-wrapper">
+            <picture class="cs-picture">
+                <source media="(max-width: 600px)"
+                        srcset="/public/images/ourValues.png">
+                <source media="(min-width: 601px)"
+                        srcset="/public/images/ourValues.png">
+                <img loading="lazy" decoding="async"
+                        src="/public/images/ourValues.png"
+                        alt="two people talking totally just friends" width="500" height="552">
+            </picture>
+            <div class="cs-content">
+                <span class="cs-topper">Our Values</span>
+                <h2 class="cs-title">Quality</h2>
+                <p class="cs-text">
+                    We take pride in producing premium greens and herbs that meet the highest standards of freshness, taste, and nutritional value. Every leaf is grown with attention to detail, from seed to harvest, ensuring our customers enjoy the best nature has to offer.
+                </p>
+                <h2 class="cs-title">Sustainability</h2>
+                <p class="cs-text">
+                    We believe farming should work in harmony with the environment. Through resource-efficient growing methods, reduced waste practices, and responsible land stewardship, we strive to protect natural ecosystems and ensure a healthier future for generations to come.
+                </p>
+                <h2 class="cs-title">Reliability</h2>
+                <p class="cs-text">
+                    Our customers and partners depend on us, and we take that responsibility seriously. We maintain consistent production, dependable supply, and transparent communication to ensure that every delivery meets expectations.
+                </p>
+                <h2 class="cs-title">Safety</h2>
+                <p class="cs-text">
+                    Food safety is at the core of everything we do. We follow strict hygiene protocols, safe handling procedures, and rigorous quality checks to ensure all our produce is clean, wholesome, and ready to enjoy with confidence.
+                </p>
+                <a class="cs-button-solid" href="">View All Products</a>
+            </div>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <h3 class="cs-h3">Acres Farmed</h3>
+                <span class="cs-number">886</span>
+                <img class="cs-graphic"
+                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/enterprise-logo-white.svg"
+                        alt="graphic" height="171" width="171" loading="lazy" decoding="async" aria-hidden="true">
+            </li>
+            <li class="cs-item">
+                <h3 class="cs-h3">Daily Output</h3>
+                <span class="cs-number">475</span>
+                <img class="cs-graphic"
+                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/enterprise-logo-white.svg"
+                        alt="graphic" height="171" width="171" loading="lazy" decoding="async" aria-hidden="true">
+            </li>
+            <li class="cs-item">
+                <h3 class="cs-h3">Locations</h3>
+                <span class="cs-number">3</span>
+                <img class="cs-graphic"
+                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/enterprise-logo-white.svg"
+                        alt="graphic" height="171" width="171" loading="lazy" decoding="async" aria-hidden="true">
+            </li>
+            <li class="cs-item">
+                <h3 class="cs-h3">Satisfied Customers</h3>
+                <span class="cs-number">90+</span>
+                <img class="cs-graphic"
+                        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/enterprise-logo-white.svg"
+                        alt="graphic" height="171" width="171" loading="lazy" decoding="async" aria-hidden="true">
+            </li>
+        </ul>
+    </div>
+</section>
+<style>
+/*-- -------------------------- -->
+<---           Stats            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #stats-1685 {
+    padding: var(--sectionPadding);
+  }
+  #stats-1685 .cs-container {
+    width: 100%;
+    /* changes to 1920px at tablet */
+    max-width: 36.5rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    /* 48px - 100px */
+    gap: clamp(3rem, 7vw, 6.25rem);
+  }
+  #stats-1685 .cs-wrapper {
+    width: 100%;
+    /* 48px - 64px */
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #stats-1685 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    max-width: 33.875rem;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+  #stats-1685 .cs-text {
+    margin-bottom: 1rem;
+  }
+  #stats-1685 .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+  #stats-1685 .cs-button-solid {
+    font-size: 1rem;
+    font-weight: 700;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-align: center;
+    text-decoration: none;
+    min-width: 9.375rem;
+    margin: 0;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    padding: 0 1.5rem;
+    color: #fff;
+    background-color: var(--primary);
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+  #stats-1685 .cs-button-solid:before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    background: #000;
+    opacity: 1;
+    border-radius: 0.25rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+  #stats-1685 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #stats-1685 .cs-picture {
+    width: 100%;
+    max-width: 39.375rem;
+    height: auto;
+    /* 400px - 600px */
+    min-height: clamp(25rem, 68vw, 37.5rem);
+    margin: 0;
+    display: block;
+    position: relative;
+    z-index: 1;
+    align-self: stretch;
+    
+  }
+
+  #stats-1685 .cs-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 1.25rem;
+  }
+  #stats-1685 .cs-card-group {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: row;
+    /* 16px - 40px */
+    gap: clamp(1rem, 3vw, 2.5rem);
+  }
+  #stats-1685 .cs-item {
+    width: 100%;
+    /* 20px - 40px */
+    padding: clamp(1.25rem, 3vw, 2.5rem);
+    background-color: #f7f7f7;
+    display: flex;
+    /* 24px - 80px */
+    flex-direction: column;
+    gap: clamp(1.5rem, 6vw, 5rem);
+    position: relative;
+    overflow: hidden;
+  }
+  #stats-1685 .cs-h3 {
+    /* 16px - 20px */
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 700;
+    line-height: 1.2em;
+    margin: 0;
+    color: var(--primary);
+    z-index: 1;
+  }
+  #stats-1685 .cs-number {
+    /* 49px - 61px */
+    font-size: clamp(3.0625rem, 5vw, 3.8125rem);
+    font-weight: 900;
+    line-height: 1.2em;
+    color: var(--headerColor);
+    z-index: 1;
+  }
+  #stats-1685 .cs-graphic {
+    /* 131px - 233px */
+    width: clamp(8.1875rem, 16vw, 14.5625rem);
+    /* 131px - 233px */
+    height: clamp(8.1875rem, 16vw, 14.5625rem);
+    position: absolute;
+    /* -49px - -37px */
+    right: clamp(-3.0625rem, -4vw, -2.3125rem);
+    /* -8px - -40px */
+    bottom: calc(clamp(0.5rem, 3vw, 2.5rem) * -1);
+    z-index: 0;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #stats-1685 .cs-container {
+    max-width: 120rem;
+  }
+  #stats-1685 .cs-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
+    gap: 2.5rem;
+  }
+  #stats-1685 .cs-content {
+    padding: 4rem 0;
+    align-self: center;
+  }
+  #stats-1685 .cs-card-group {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+                                
+</style>                                                              
+
+                                
+</BaseLayout>
