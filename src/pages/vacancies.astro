@@ -3,5 +3,56 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout>
-    
+    <section class="vacancies-section">
+    <div class="vacancies-container">
+        <h2>Current Vacancies</h2>
+        <div class="vacancies-box">
+        <p>
+            We’re not hiring at the moment, but new opportunities become available
+            throughout the year. Please check back soon for updates.
+        </p>
+        </div>
+    </div>
+    </section>
+
+    <style>
+        .vacancies-section {
+        width: 100%;
+        padding: 4rem;
+        padding-top: 10rem;
+        background: #f7f9f7; /* soft natural tint */
+        display: flex;
+        justify-content: center;
+        }
+
+        .vacancies-container {
+        max-width: 700px;
+        text-align: center;
+        }
+
+        .vacancies-container h2 {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 30px;
+        color: #1f3d1f; /* deep green */
+        }
+
+        .vacancies-box {
+        background: #ffffff;
+        border: 1px solid #dfe6df;
+        padding: 30px 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .vacancies-box p {
+        margin: 0;
+        font-size: 1.1rem;
+        color: #3f4f3f;
+        line-height: 1.6;
+        }
+       
+
+    </style>
+
 </BaseLayout>
