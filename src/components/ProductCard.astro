@@ -11,7 +11,7 @@ const { product } = Astro.props as { product: Product };
 
             <li class="cs-item">
                 <a href={`/AmazingSalads/products/${product.slug}`} class="cs-link">
-                    <picture class="cs-picture">
+                    <picture class="cs-picture fade-slide">
                         <!--Mobile Image-->
                         <source media="(max-width: 600px)" srcset={product.image}>
                         <!--Tablet and above Image-->

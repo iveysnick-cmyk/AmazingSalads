@@ -325,30 +325,6 @@ const s = skrollr.init({
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- ============================================ -->
 <!--                   Products                   -->
 <!-- ============================================ -->
@@ -677,6 +653,13 @@ const s = skrollr.init({
                 <source media="(min-width: 601px)" srcset="/AmazingSalads/images/step5.png">
                 <img loading="lazy" decoding="async" src="/AmazingSalads/images/step5.png" alt="building" width="287" height="287">
             </picture>
+            <picture class="cs-picture cs-picture6 fade-slide">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="/AmazingSalads/images/step6.png">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="/AmazingSalads/images/step6.png">
+                <img loading="lazy" decoding="async" src="/AmazingSalads/images/step5.png" alt="building" width="203" height="203">
+            </picture>
             
             <!--Stripe background-->
             <picture class="cs-waves-wrapper">
@@ -687,27 +670,31 @@ const s = skrollr.init({
             <span class="cs-topper">Our Process</span>
             <h2 class="cs-title">We’re Committed to Maintain Standard Work Process</h2>
             <p class="cs-text">
-                We hand-pick fresh produce and carefully sort out any damaged or unsuitable items to ensure only the highest-quality harvest moves forward. After picking, everything is gently dried to maintain crispness and prevent excess moisture. The produce is then triple-washed in clean, potable water for safety and consistent quality. Once prepared, each batch is packed in clean, food-safe bags and clearly labelled with harvest and batch information. Throughout the entire process, from storage to delivery, the products are kept within a strict 1–4°C cold chain to maintain maximum freshness until they reach you.
-			<ul class="cs-ul">
+                We carefully harvest our produce at peak freshness and sort it to remove any damaged or unsuitable items, ensuring only the highest-quality product continues through the process. The selected produce is then packed in clean, food-safe packaging and clearly labelled with harvest and batch information for full traceability. Once packed, the product undergoes rapid vacuum cooling to quickly remove field heat and preserve freshness, followed by controlled freezing to lock in quality, texture, and nutrients. From freezing through to final delivery, strict temperature controls are maintained to ensure the product arrives in optimal condition.
+			      <ul class="cs-ul">
                 <li class="cs-li">
                     <img class="cs-li-img" loading="lazy" decoding="async" src="/AmazingSalads/images/harvest.svg" alt="icon" width="24" height="24" aria-hidden="true">
-                    Harvest and Sorting.
+                    Harvest. 
                 </li>
                 <li class="cs-li">
-                    <img class="cs-li-img" loading="lazy" decoding="async" src="/AmazingSalads/images/washing.svg" alt="icon" width="24" height="24" aria-hidden="true">
-                    Washing.
-                </li>
-                <li class="cs-li">
-                    <img class="cs-li-img" loading="lazy" decoding="async" src="/AmazingSalads/images/drying.svg" alt="icon" width="24" height="24" aria-hidden="true">
-                    Drying.
+                    <img class="cs-li-img" loading="lazy" decoding="async" src="/AmazingSalads/images/sorting.svg" alt="icon" width="24" height="24" aria-hidden="true">
+                    Sorting. 
                 </li>
                 <li class="cs-li">
                     <img class="cs-li-img" loading="lazy" decoding="async" src="/AmazingSalads/images/packing.svg" alt="icon" width="24" height="24" aria-hidden="true">
                     Packing.
                 </li>
-				<li class="cs-li">
+                <li class="cs-li">
+                    <img class="cs-li-img" loading="lazy" decoding="async" src="/AmazingSalads/images/cooling.svg" alt="icon" width="24" height="24" aria-hidden="true">
+                    Vacuum Cooling.
+                </li>
+                <li class="cs-li">
+                    <img class="cs-li-img" loading="lazy" decoding="async" src="/AmazingSalads/images/freezing.svg" alt="icon" width="24" height="24" aria-hidden="true">
+                    Freezing.
+                </li>
+				        <li class="cs-li">
                     <img class="cs-li-img" loading="lazy" decoding="async" src="/AmazingSalads/images/delivery.svg" alt="icon" width="24" height="24" aria-hidden="true">
-                    Cold chain delivery.
+                    Delivery.
                 </li>
             </ul>
             <a href="/AmazingSalads/buyers/" class="cs-button-solid">Learn More</a>
@@ -1195,30 +1182,5 @@ const s = skrollr.init({
 		}
 		</style> 
 	
-
-
-<style>
-	.fade-slide {
-	opacity: 0;
-	transform: translateY(20px);
-	transition: all 0.6s ease-out;
-	}
-	.fade-slide.visible {
-	opacity: 1;
-	transform: translateY(0);
-	}
-
-</style>
-<script>
-	const observer = new IntersectionObserver(entries => {
-	entries.forEach(entry => {
-		if (entry.isIntersecting) {
-		entry.target.classList.add('visible');
-		}
-	});
-	});
-	document.querySelectorAll('.fade-slide').forEach(el => observer.observe(el));
-
-</script>
 
 </BaseLayout>
