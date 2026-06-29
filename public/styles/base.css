@@ -203,7 +203,7 @@ body {
 /* Desktop - 1024px */
 @media only screen and (min-width: 64rem) {
   #services-2355 {
-    padding-top: 4rem;
+    padding-top: 10rem;
   }
   
   #services-2355 .cs-card-group {

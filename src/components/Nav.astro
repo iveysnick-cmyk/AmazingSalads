@@ -11,28 +11,32 @@ const currentPath = Astro.url.pathname;
 
 <header id="cs-navigation">
     <div class="top-bar">
-            <div class="logo left" width="50">
+            <div class="logo left">
+              <a href="/AmazingSalads">
                 <img src="/AmazingSalads/images/logo.png" alt="Left Logo" width="100" height="auto">
+              </a>
             </div>
 
             <div class="center-text">
                 <span class="title">Amazing Salads LTD</span>
-                <span class="phone">+44 7463 595566</span>
+                <!-- <span class="phone">+44 7463 595566</span> -->
             </div>
 
             <div class="logo right">
+              <a href="/AmazingSalads">
                 <img src="/AmazingSalads/images/logo.png" alt="Right Logo" width="100" height="auto">
+              </a>
             </div>
     </div>
     <div class="cs-container">
         <!--Nav Logo-->
-        <a href="" class="cs-logo cs-bottom-logo" aria-label="back to home">
+        <!-- <a href="" class="cs-logo cs-bottom-logo" aria-label="back to home"> -->
             <!--White Logo-->
             <!--This nav has an on scroll effect to rotate the images to swap the light version with the dark version so it shows up on the white background that animates behind the nav-->
-            <img class="cs-light" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Logos/agency-logo.svg" alt="logo" width="197" height="43" aria-hidden="true" decoding="async">
+            <!-- <img class="cs-light" src="" alt="logo" width="197" height="43" aria-hidden="true" decoding="async"> -->
             <!--Dark Logo-->
-            <img class="cs-dark" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Logos/agency-logo-dark.svg" alt="logo" width="197" height="43" aria-hidden="true" decoding="async">
-        </a>
+            <!-- <img class="cs-dark" src="" alt="logo" width="197" height="43" aria-hidden="true" decoding="async"> -->
+        <!-- </a> -->
         <!--Navigation List-->
         <nav class="cs-nav" role="navigation">
             <!--Mobile Nav Toggle-->
@@ -47,27 +51,30 @@ const currentPath = Astro.url.pathname;
             <div class="cs-ul-wrapper">
                 <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
                     <li class="cs-li">
-                        <a href="" class="cs-li-link cs-active">
-                            Home
+                        <a href="/AmazingSalads/buyers" class={currentPath === "/AmazingSalads/buyers" ? " cs-li-link cs-active" : "cs-li-link"}>
+                            Buyers
+                        </a>
+                    </li>
+                    
+                    <li class="cs-li">
+                        <a href="/AmazingSalads/products" class={currentPath === "/AmazingSalads/products" ? " cs-li-link cs-active" : "cs-li-link"}>
+                            Products
+                        </a>
+                    </li>
+
+                    <li class="cs-li">
+                        <a href="/AmazingSalads/vacancies" class={currentPath === "/AmazingSalads/vacancies" ? " cs-li-link cs-active" : "cs-li-link"}>
+                            Vacancies
+                        </a>
+                    </li>
+    
+                    <li class="cs-li">
+                        <a href="/AmazingSalads/about" class={currentPath === "/AmazingSalads/about" ? " cs-li-link cs-active" : "cs-li-link"}>
+                            About Us
                         </a>
                     </li>
                     <li class="cs-li">
-                        <a href="" class="cs-li-link">
-                            About
-                        </a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-li-link">
-                            Services
-                        </a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-li-link">
-                            Blog
-                        </a>
-                    </li>
-                    <li class="cs-li">
-                        <a href="" class="cs-li-link">
+                        <a href="/AmazingSalads/contact" class={currentPath === "/AmazingSalads/contact" ? " cs-li-link cs-active" : "cs-li-link"}>
                             Contact
                         </a>
                     </li>
@@ -117,7 +124,7 @@ const currentPath = Astro.url.pathname;
     }
     /* Main text */
     .center-text .title {
-    font-size: 1.9rem;
+    font-size: 3.1rem;
     font-weight: 700;
     text-align: center;
     padding-top: 1rem;
@@ -277,7 +284,7 @@ const currentPath = Astro.url.pathname;
     box-sizing: border-box;
     padding: 1rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
   }
   #cs-navigation .cs-logo {
@@ -517,6 +524,7 @@ const currentPath = Astro.url.pathname;
   }
   #cs-navigation .cs-li-link.cs-active {
     color: var(--primary);
+    text-decoration: underline; 
   }
   #cs-navigation .cs-li-link:hover {
     color: var(--primary);
@@ -720,6 +728,7 @@ const currentPath = Astro.url.pathname;
   }
   #cs-navigation .cs-li-link.cs-active {
     color: var(--primary);
+    text-decoration: underline;
   }
   #cs-navigation .cs-button-solid {
     font-size: 1rem;
@@ -799,14 +808,14 @@ const currentPath = Astro.url.pathname;
     // and we used these body.scroll styles to create some on scroll 
     // animations with the navbar
     
-    document.addEventListener('scroll', (e) => { 
-        const scroll = document.documentElement.scrollTop;
-        if(scroll >= 100){
-    document.querySelector('body').classList.add('scroll')
-        } else {
-        document.querySelector('body').classList.remove('scroll')
-        }
-    });
+    //document.addEventListener('scroll', (e) => { 
+     //   const scroll = document.documentElement.scrollTop;
+       // if(scroll >= 100){
+    //document.querySelector('body').classList.add('scroll')
+      //  } else {
+        //document.querySelector('body').classList.remove('scroll')
+        //}
+    //});
 
     // mobile nav toggle code
     const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
